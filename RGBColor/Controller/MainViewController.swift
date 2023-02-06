@@ -57,7 +57,7 @@ final class MainViewController: UIViewController {
     }
     
     @objc private func blueSliderTapped(slider: UISlider) {
-        greenLabel.text = String(format: "%.2f", slider.value)
+        blueLabel.text = String(format: "%.2f", slider.value)
         baseView.backgroundColor = .init(red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(slider.value), alpha: 1)
     }
 
@@ -86,7 +86,9 @@ extension MainViewController {
     }
     
     func  setupStackViewForSliders() {
-        stacKViewForSliders = UIStackView(arrangedViews: [redSlider, greenSlider, blueSlider], axis: .vertical, spacing: 10)
+        stacKViewForSliders = UIStackView(arrangedViews: [redSlider, greenSlider, blueSlider],
+                                          axis: .vertical,
+                                          spacing: 10)
     }
     
 }

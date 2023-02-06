@@ -64,11 +64,8 @@
 			children = (
 				EFAD2BFE299112F1000551B0 /* Exstension */,
 				EFAD2BFD299112C9000551B0 /* Application */,
-				EFAD2BED29910E31000551B0 /* MainViewController.swift */,
-				EFAD2BEF29910E31000551B0 /* Main.storyboard */,
-				EFAD2BF229910E32000551B0 /* Assets.xcassets */,
-				EFAD2BF429910E32000551B0 /* LaunchScreen.storyboard */,
-				EFAD2BF729910E32000551B0 /* Info.plist */,
+				EFAD2C06299133FC000551B0 /* Controller */,
+				EFAD2C052991309D000551B0 /* SupportingFiles */,
 			);
 			path = RGBColor;
 			sourceTree = "<group>";
@@ -90,6 +87,25 @@
 				EFAD2C0329911BEE000551B0 /* UISlider + ext.swift */,
 			);
 			path = Exstension;
+			sourceTree = "<group>";
+		};
+		EFAD2C052991309D000551B0 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				EFAD2BF229910E32000551B0 /* Assets.xcassets */,
+				EFAD2BF429910E32000551B0 /* LaunchScreen.storyboard */,
+				EFAD2BF729910E32000551B0 /* Info.plist */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		EFAD2C06299133FC000551B0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				EFAD2BED29910E31000551B0 /* MainViewController.swift */,
+				EFAD2BEF29910E31000551B0 /* Main.storyboard */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -316,12 +332,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = RGBColor/Info.plist;
+				INFOPLIST_FILE = RGBColor/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -346,12 +363,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = RGBColor/Info.plist;
+				INFOPLIST_FILE = RGBColor/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
