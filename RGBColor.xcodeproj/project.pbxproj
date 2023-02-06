@@ -62,9 +62,9 @@
 		EFAD2BE829910E31000551B0 /* RGBColor */ = {
 			isa = PBXGroup;
 			children = (
-				EFAD2BFE299112F1000551B0 /* Exstension */,
 				EFAD2BFD299112C9000551B0 /* Application */,
 				EFAD2C06299133FC000551B0 /* Controller */,
+				EFAD2BFE299112F1000551B0 /* Exstension */,
 				EFAD2C052991309D000551B0 /* SupportingFiles */,
 			);
 			path = RGBColor;
