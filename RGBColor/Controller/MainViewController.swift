@@ -30,6 +30,7 @@ final class MainViewController: UIViewController {
     private var stackViewForLabels: UIStackView!
     private var stacKViewForSliders: UIStackView!
     
+    
     private let colors = ["Red:", "Green:", "Blue:"]
 
     override func viewDidLoad() {
@@ -67,7 +68,6 @@ final class MainViewController: UIViewController {
 //        label.font = UIFont.systemFont(ofSize: 24)
         return label
     }
-
 }
 
 //MARK: SetupStackViews
@@ -90,7 +90,6 @@ extension MainViewController {
                                           axis: .vertical,
                                           spacing: 10)
     }
-    
 }
  
 //MARK: SetConstraints
@@ -98,9 +97,12 @@ extension MainViewController {
 extension MainViewController {
     
     func setConstraints() {
+        
+        let top = view.frame.width * 0.18
+        
         view.addSubview(baseView)
         NSLayoutConstraint.activate([
-            baseView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 50),
+            baseView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: view.frame.width * 0.12),
             baseView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
             baseView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20),
             baseView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.2)
@@ -108,14 +110,14 @@ extension MainViewController {
         
         view.addSubview(stackViewForColors)
         NSLayoutConstraint.activate([
-            stackViewForColors.topAnchor.constraint(equalTo: baseView.bottomAnchor, constant: 80),
+            stackViewForColors.topAnchor.constraint(equalTo: baseView.bottomAnchor, constant: top),
             stackViewForColors.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
 //            stackViewForLabel.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.15)
         ])
         
         view.addSubview(stackViewForLabels)
         NSLayoutConstraint.activate([
-            stackViewForLabels.topAnchor.constraint(equalTo: baseView.bottomAnchor, constant: 80),
+            stackViewForLabels.topAnchor.constraint(equalTo: baseView.bottomAnchor, constant: top),
             stackViewForLabels.leadingAnchor.constraint(equalTo: stackViewForColors.trailingAnchor, constant: 20),
             stackViewForLabels.centerYAnchor.constraint(equalTo: stackViewForColors.centerYAnchor),
             stackViewForLabels.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.15)
@@ -123,12 +125,10 @@ extension MainViewController {
         
         view.addSubview(stacKViewForSliders)
         NSLayoutConstraint.activate([
-            stacKViewForSliders.topAnchor.constraint(equalTo: baseView.bottomAnchor, constant: 80),
+            stacKViewForSliders.topAnchor.constraint(equalTo: baseView.bottomAnchor, constant: top),
             stacKViewForSliders.leadingAnchor.constraint(equalTo: stackViewForLabels.trailingAnchor, constant: 30),
             stacKViewForSliders.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             stacKViewForSliders.centerYAnchor.constraint(equalTo: stackViewForLabels.centerYAnchor),
         ])
-        
-    
     }
 }
