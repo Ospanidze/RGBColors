@@ -42,30 +42,37 @@ final class MainViewController: UIViewController {
         setupStackViewForSliders()
         setConstraints()
         
-        redSlider.addTarget(self, action: #selector(redSliderTapped(slider:)), for: .valueChanged)
-        greenSlider.addTarget(self, action: #selector(greenSliderTapped(slider:)), for: .valueChanged)
-        blueSlider.addTarget(self, action: #selector(blueSliderTapped(slider:)), for: .valueChanged)
+        addTarget(sliders: redSlider, greenSlider, blueSlider)
     }
     
-    @objc private func redSliderTapped(slider: UISlider) {
-        redLabel.text = String(format: "%.2f", slider.value)
-        baseView.backgroundColor = .init(red: CGFloat(slider.value), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: 1)
+    private func addTarget(sliders: UISlider...) {
+        sliders.forEach { slider in
+            slider.addTarget(self, action: #selector(sliderTapped(slider:)), for: .valueChanged)
+        }
     }
     
-    @objc private func greenSliderTapped(slider: UISlider) {
-        greenLabel.text = String(format: "%.2f", slider.value)
-        baseView.backgroundColor = .init(red: CGFloat(redSlider.value), green: CGFloat(slider.value), blue: CGFloat(blueSlider.value), alpha: 1)
-    }
-    
-    @objc private func blueSliderTapped(slider: UISlider) {
-        blueLabel.text = String(format: "%.2f", slider.value)
-        baseView.backgroundColor = .init(red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(slider.value), alpha: 1)
+    @objc private func sliderTapped(slider: UISlider) {
+        let text = String(format: "%.2f", slider.value)
+        let redColor = CGFloat(redSlider.value)
+        let greenColor = CGFloat(greenSlider.value)
+        let blueColor = CGFloat(blueSlider.value)
+        
+        switch slider {
+        case redSlider:
+            redLabel.text = text
+            baseView.backgroundColor = .init(red: CGFloat(slider.value), green: greenColor, blue: blueColor, alpha: 1)
+        case greenSlider:
+            greenLabel.text = text
+            baseView.backgroundColor = .init(red: redColor, green: CGFloat(slider.value), blue: blueColor, alpha: 1)
+        default:
+            blueLabel.text = text
+            baseView.backgroundColor = .init(red: redColor, green: greenColor, blue: CGFloat(slider.value), alpha: 1)
+        }
     }
 
     private func makeLabel(_ text: String) -> UILabel {
         let label = UILabel()
         label.text = text
-//        label.font = UIFont.systemFont(ofSize: 24)
         return label
     }
 }
